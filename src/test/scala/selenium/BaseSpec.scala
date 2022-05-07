@@ -25,8 +25,6 @@ abstract class BaseSpec() extends AnyFlatSpec with Matchers with BeforeAndAfterA
     driver = new ChromeDriver(chromeOptions)
     chromeDriver = System.setProperty("webdriver.chrome.driver","chromedriver")
     explicitWait = new WebDriverWait(driver,30,100)
-    //val email = "kolkatacovid19resources@gmail.com"
-    //val password = "Tom@4242"
     logInFacebook(driver,getEmailId(),getPassword())
   }
 
