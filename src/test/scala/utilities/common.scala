@@ -4,8 +4,6 @@ import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.{By, WebDriver}
 import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
 
-import java.io.File
-
 object common {
 
   val facebookLink : String = "https://www.facebook.com/"
@@ -14,9 +12,6 @@ object common {
   implicit var driver: WebDriver = _
   val chromeOptions = new ChromeOptions()
   chromeOptions.addArguments("--disable-notifications")
-
-
-
 
 
   def logInFacebook(driver: WebDriver,email: String, password: String): Unit = {
