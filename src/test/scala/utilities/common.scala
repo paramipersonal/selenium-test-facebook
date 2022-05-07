@@ -9,12 +9,16 @@ import java.io.File
 object common {
 
   val facebookLink : String = "https://www.facebook.com/"
+  val captureDirectory: String = "screenshots"
+  var explicitWait: WebDriverWait = _
+  implicit var driver: WebDriver = _
   val chromeOptions = new ChromeOptions()
   chromeOptions.addArguments("--disable-notifications")
-  implicit var driver: WebDriver = _
-  var chromeDriver: String = _
-  var explicitWait: WebDriverWait = _
-  val captureDirectory: String = "screenshots"
+
+
+
+
+
   def logInFacebook(driver: WebDriver,email: String, password: String): Unit = {
     launchFacebook(driver)
     checkIfEmailFieldIsPresent()
@@ -60,7 +64,12 @@ object common {
     val logout = explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath(s"//span[.='Log Out']")))
     logout.click()
     explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.id("email")))
+  }
 
+  def clickFacebookHome(): Unit = {
+    val home = explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(s"//a[contains(@aria-label,'Home')]")))
+    home.click()
+    explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(s"//div[contains(@aria-label,'Create a post')]")))
   }
 
 }

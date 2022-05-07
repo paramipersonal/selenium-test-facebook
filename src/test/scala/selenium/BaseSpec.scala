@@ -2,7 +2,7 @@ package selenium
 
 import authorization._
 import org.openqa.selenium.WebDriver
-import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.chrome.{ChromeDriver, ChromeOptions}
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
@@ -12,11 +12,14 @@ import org.openqa.selenium.support.ui.WebDriverWait
 
 import java.io.File
 
-abstract class BaseSpec() extends AnyFlatSpec with Matchers with BeforeAndAfterAll with WebBrowser with LoginAuthorization {
+abstract class BaseSpec extends AnyFlatSpec with Matchers with BeforeAndAfterAll with WebBrowser with LoginAuthorization {
+
 
   override def beforeAll(): Unit = {
+    println("Entered before all.")
     driver = new ChromeDriver(chromeOptions)
-    chromeDriver = System.setProperty("webdriver.chrome.driver","chromedriver")
+    println("Driver:" +driver)
+    System.setProperty("webdriver.chrome.driver","chromedriver.exe")
     explicitWait = new WebDriverWait(driver,30,100)
     setCaptureDir(captureDirectory)
     logInFacebook(driver,getEmailId(),getPassword())
