@@ -1,8 +1,10 @@
-ThisBuild / version := "0.1.0-SNAPSHOT"
+name := "selenium-test-facebook"
 
-ThisBuild / scalaVersion := "2.13.8"
+version := "0.1.0-SNAPSHOT"
 
-lazy val root = (project in file("."))
-  .settings(
-    name := "selenium-test-facebook"
-  )
+scalaVersion := "2.13.8"
+
+libraryDependencies += "org.scalatest"  %% "scalatest" % "3.2.0" % "test"
+libraryDependencies += "org.scalatestplus"  %% "selenium-3-141" % "3.2.0.0" % "test"
+libraryDependencies += "org.seleniumhq.selenium" % "selenium-java" % "3.14.0" % "test"
+
