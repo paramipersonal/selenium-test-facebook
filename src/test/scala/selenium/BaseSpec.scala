@@ -7,7 +7,7 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.selenium.WebBrowser
 import utilities.common._
-import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
+import org.openqa.selenium.support.ui.WebDriverWait
 
 abstract class BaseSpec() extends AnyFlatSpec with Matchers with BeforeAndAfterAll with WebBrowser with LoginAuthorization {
 
