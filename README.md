@@ -23,7 +23,7 @@ libraryDependencies += "org.seleniumhq.selenium" % "selenium-java" % "3.14.0" % 
 ## Clone and Run Project:
 1. Clone the repository using the git command:
 ```
-git clone https://github.com/paramipersonal/FacebookLoginLogout.git
+git clone https://github.com/paramipersonal/selenium-test-facebook.git
 ```
 3. Put the downloaded chromedriver.exe inside the project directory, in this case FacebookLoginLout
 4. Open the project in IntelliJ , Using open Project from existing sources.
