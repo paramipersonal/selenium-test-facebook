@@ -4,6 +4,8 @@ import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.{By, WebDriver}
 import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
 
+import java.io.File
+
 object common {
 
   val facebookLink : String = "https://www.facebook.com/"
@@ -12,7 +14,7 @@ object common {
   implicit var driver: WebDriver = _
   var chromeDriver: String = _
   var explicitWait: WebDriverWait = _
-
+  val captureDirectory: String = "screenshots"
   def logInFacebook(driver: WebDriver,email: String, password: String): Unit = {
     launchFacebook(driver)
     checkIfEmailFieldIsPresent()
@@ -60,6 +62,5 @@ object common {
     explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.id("email")))
 
   }
-
 
 }
