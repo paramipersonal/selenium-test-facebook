@@ -3,6 +3,8 @@ package utilities
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.{By, WebDriver}
 import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
+import org.openqa.selenium.JavascriptExecutor
+
 
 object common {
 
@@ -54,7 +56,7 @@ object common {
   }
 
   def logOutOfFacebook(): Unit = {
-    explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath(s"//div[contains(@aria-label,'Your profile')]"))).click()
+    clickAccountDropdown()
     explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(s"//span[.='See your profile']")))
     val logout = explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath(s"//span[.='Log Out']")))
     logout.click()
@@ -65,6 +67,21 @@ object common {
     val home = explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(s"//a[contains(@aria-label,'Home')]")))
     home.click()
     explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(s"//div[contains(@aria-label,'Create a post')]")))
+  }
+
+  def clickAccountDropdown(): Unit = {
+    explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath(s"//div[contains(@aria-label,'Your profile')]"))).click()
+  }
+
+  def goToTimeline(): Unit = {
+    clickAccountDropdown()
+    explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href='/me/']"))).click()
+    explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[.='Photos']")))
+  }
+
+  def scrollDown(pixel: String): Unit = {
+    val js = driver.asInstanceOf[JavascriptExecutor]
+    js.executeScript(pixel, "")
   }
 
 }
