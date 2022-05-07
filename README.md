@@ -29,8 +29,9 @@ git clone https://github.com/paramipersonal/selenium-test-facebook.git
 4. Open the project in IntelliJ , Using open Project from existing sources.
 5. If there is no existing Scala SDK, IntelliJ will pop up download instuctions. Please download scala 2.13.8
 6. Let IntelliJ resolve the other required dependencies
-7. IntelliJ will give option to start to project build, click on that.
-8. Go to the terminal and inside the project directory, use ```sbt test``` to run the tests.
+7. Create a directory "screenshots" under project root . This will ensure that the screenshots are saved in that directory, whenever the test fails.
+8. IntelliJ will give option to start to project build, click on that.
+9. Go to the terminal and inside the project directory, use ```sbt test``` to run the tests.
 
 
 
