@@ -1,7 +1,6 @@
 package selenium
 
-import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.ExpectedConditions
+import utilities.common._
 
 class LoginSpec extends BaseSpec {
   markup("This test will launch facebook and login")
