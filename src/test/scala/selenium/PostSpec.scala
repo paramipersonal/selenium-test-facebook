@@ -10,7 +10,7 @@ class PostSpec extends BaseSpec {
   "Clicking on Post Button after creating a post in facebook" should "create a post in facebook" in {
     withScreenshot{
         clickFacebookHome()
-        createPost()
+        createPost("Hello World")
     }
   }
 

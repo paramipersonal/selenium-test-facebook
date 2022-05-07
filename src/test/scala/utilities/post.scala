@@ -28,7 +28,7 @@ object post {
     textAreaForPost
   }
 
-  
+
   def clickPostButton(): Unit = {
     val postButton = explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[aria-label='Post']")))
     postButton.click()
