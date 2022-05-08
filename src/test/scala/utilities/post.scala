@@ -1,6 +1,5 @@
 package utilities
 import common._
-import org.openqa.selenium.interactions.Actions
 import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.ExpectedConditions
 
@@ -37,7 +36,7 @@ object post {
   }
 
   def verifyPostedStatus(status: String): Unit = {
-    driver.findElement(By.xpath(s"//*[text()='$status']"))
-   // assert(driver.findElement(By.xpath(s"//*[text()='$status']")).getText.contains(status))
+    val findPost = driver.findElement(By.xpath(s"//*[text()='$status']"))
+    assert(findPost.getText.equals(status))
   }
 }

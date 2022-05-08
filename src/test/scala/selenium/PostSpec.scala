@@ -1,5 +1,7 @@
 package selenium
 
+import org.openqa.selenium.By
+import org.openqa.selenium.support.ui.ExpectedConditions
 import utilities.common._
 import utilities.post._
 import utilities.screenshot._
@@ -17,7 +19,7 @@ class PostSpec extends BaseSpec {
         goToTimeline()
         scrollDown("window.scrollBy(0,500)")
         verifyPostedStatus(STATUS)
-        //An alternative way is to take screenshot of the status posted and store it.
+        //You can also store screenshot of the posted status. Uncomment the below method to do so.
         //takeScreenshotToVerifyPost(driver)
     }
   }
