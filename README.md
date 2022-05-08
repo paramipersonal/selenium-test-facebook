@@ -1,12 +1,15 @@
 # Selenium Test Facebook
 
 This README contains the below sections:
+* [Project Structure and Descriptions](#project-structure-and-descriptions)
 * [Prerequisites](#prerequisites)
 * [Dependencies used in build.sbt](#dependencies-used-in-buildsbt)
 * [Clone and run project](#clone-and-run-project)
-* [List of tests done](#list-of-tests-done)
+* [Next Steps that could be taken](#next-steps-that-could-be-taken)
+* [Constraints](#constraints)
+* [Challenges](#challenges)
 
-# Project Structure and Descriptions
+## Project Structure and Descriptions
 This is a simple project that uses Selenium WebDriver and scalatest
 to perform the below actions:
 1. Launch Facebook
@@ -17,25 +20,26 @@ to perform the below actions:
 6. Takes screenshot whenever a test fails.
 7. Also, takes screenshots, as per developer's needs.
 
-## Files
+### Files
 There are three directories & a file under the source (src) directory:
-* Directory: authorization
-* Directory: selenium
-* Directory: utilities
-* File: TestSuite.scala 
+* [File: TestSuite.scala](#testsuitescala-)
+* [Directory: authorization](#file-inside-authorization-directory)
+* [Directory: utilities](#files-inside-utilities-directory)
+* [Directory: selenium](#files-inside-selenium-directory)
+
 
 #### **TestSuite.scala** : 
 
 Scala suite class, which runs all the test classes present inside selenium
 sequentially in the order of their mention in this file.
 
-### File inside **authorization** directory 
+#### File inside **authorization** directory 
 
 **LoginAuthorization.scala** : Scala trait storing the below informations: 
 1. variables containing email id and password used for facebook login
 2. getter and setter methods for email id and password.
 
-### Files inside **utilities** directory
+#### Files inside **utilities** directory
 
 **common.scala** : Scala object storing common methods to be accessed the most from multiple tests.
 
@@ -44,7 +48,7 @@ sequentially in the order of their mention in this file.
 **screenshot.scala** : Scala object containing a custom method which can be used anywhere the developer needs to 
 take screenshot (this is different from the withScreenshot method, which takes screenshots only when a test fails.)
 
-### Files inside **selenium** directory
+#### Files inside **selenium** directory
 
 | Class Name            | Test                                                                                                                                     |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------|
@@ -86,7 +90,7 @@ git clone https://github.com/paramipersonal/selenium-test-facebook.git
 ## Constraints: 
 
 It has been observed that various facebook profile had various navigation patterns involved.
-I observed a couple of facebook profiles, in the same machine, same browser and two different UI navigation patters.
+I observed a couple of facebook profiles, in the same machine, same browser and found two different UI navigation patterns.
 Please find the types below :
 
 **Type1** :
