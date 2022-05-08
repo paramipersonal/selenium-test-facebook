@@ -3,6 +3,7 @@
 This README contains the below sections: 
 * [Prerequisites](#prerequisites)
 * [Dependencies used in build.sbt](#dependencies-used-in-buildsbt)
+* [Clone and run project](#clone-and-run-project)
 
 
 This is a simple project that uses Selenium WebDriver and scalatest
