@@ -2,7 +2,7 @@ package authorization
 
 trait LoginAuthorization {
 
-  private var EMAIL_ID = "kolkatacovid19resources@gmail.com"
+  private var EMAIL_ID = "testwinslet@gmail.com"
   private var PASSWORD = "Tom@4242"
 
 

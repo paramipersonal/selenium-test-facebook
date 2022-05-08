@@ -17,7 +17,7 @@ class PostSpec extends BaseSpec {
         clickFacebookHome()
         createPost(STATUS)
         goToTimeline()
-        scrollDown("window.scrollBy(0,500)")
+        scrollDown("window.scrollBy(0,1000)")
         verifyPostedStatus(STATUS)
         //You can also store screenshot of the posted status. Uncomment the below method to do so.
         //takeScreenshotToVerifyPost(driver)
