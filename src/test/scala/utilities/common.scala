@@ -56,8 +56,6 @@ object common {
 
   def logOutOfFacebook(): Unit = {
     clickAccountDropdown()
-    //This line is temporary
-    //explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[1]/div/div[1]/div[1]/div/div[1]/span/div/div[2]"))).click()
     explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(s"//span[.='See your profile']")))
     val logout = explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath(s"//span[.='Log Out']")))
     logout.click()
@@ -80,10 +78,8 @@ object common {
 
   def goToTimeline(): Unit = {
      clickAccountDropdown()
-    //This line is temporary
-    //explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[1]/div/div[1]/div[1]/div/div[1]/span/div/div[2]"))).click()
-    explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href='/me/']"))).click()
-    explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[.='Photos']")))
+     explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href='/me/']"))).click()
+     explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[.='Photos']")))
   }
 
   def scrollDown(pixel: String): Unit = {

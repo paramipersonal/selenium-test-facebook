@@ -79,14 +79,48 @@ git clone https://github.com/paramipersonal/selenium-test-facebook.git
 8. IntelliJ will give option to start to project build, click on that.
 9. Go to the terminal and inside the project directory, use ```sbt test``` to run the tests.
 
-## Files
+## Next Steps that could be taken: 
+* More basic but similar functionalities could be tested . Some examples are : add a story, add About, add Photos.
+* Facebook does not allow posting two identical posts within a short interval of time. This could be tested.
+
+## Constraints: 
+
+It has been observed that various facebook profile had various navigation patterns involved.
+I observed a couple of facebook profiles, in the same machine, same browser and two different UI navigation patters.
+Please find the types below :
+
+**Type1** :
+![alt text](D:\IntelliJ\Images/UI_test1.png)
+
+**Type2** : 
+![alt_text](D:\IntelliJ\Images/UI_test2.png)
 
 
-## List of Tests done
+Here I have used type1 of UI for navigation steps inside selenium.
+If anyone has the type 2, one can modifying the following methods before running the tests: 
+```
+def goToTimeline(): Unit = {
+    explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[1]/div/div[1]/div[1]/div/div[1]/span/div/div[2]"))).click()
+    explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href='/me/']"))).click()
+    explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[.='Photos']")))
+  }
+```
 
-Below is the list of selenium test present in this project
+```
+ def logOutOfFacebook(): Unit = {
+    explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[1]/div/div[1]/div[1]/div/div[1]/span/div/div[2]"))).click()
+    explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(s"//span[.='See your profile']")))
+    val logout = explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath(s"//span[.='Log Out']")))
+    logout.click()
+    explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.id("email")))
+  }
+```
 
+Also, facebook does not lets anyone post repeatedly in a short span of time. Thus, had to stay
+careful about getting blocked. 
 
+## Challenges
 
-
+Since most of the css selectors were created dynamically, finding locators and selecting the proper 
+DOM locators in a way that the code can be re-used , was the primary challenge. 
 
