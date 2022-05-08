@@ -2,9 +2,8 @@ package authorization
 
 trait LoginAuthorization {
 
-  private val EMAIL_ID = "kolkatacovid19resources@gmail.com"
-  private val PASSWORD = "Tom@4242"
-
+  private var EMAIL_ID = "kolkatacovid19resources@gmail.com"
+  private var PASSWORD = "Tom@4242"
 
   def getEmailId(): String = {
     EMAIL_ID
@@ -12,6 +11,14 @@ trait LoginAuthorization {
 
   def getPassword(): String = {
     PASSWORD
+  }
+
+  def setEmailId(emailId: String): Unit = {
+    EMAIL_ID = emailId
+  }
+
+  def setPassword(password: String): Unit = {
+    PASSWORD = password
   }
 
 }
