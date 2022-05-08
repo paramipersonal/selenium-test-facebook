@@ -1,12 +1,39 @@
 # Selenium Test Facebook
 
-* [Project Structure and Descriptions](#project-structure-and-descriptions)
 * [Prerequisites](#prerequisites)
 * [Dependencies used in build.sbt](#dependencies-used-in-buildsbt)
 * [Clone and run project](#clone-and-run-project)
-* [Next Steps that could be taken](#next-steps-that-could-be-taken)
+* [Project Structure and Descriptions](#project-structure-and-descriptions)
 * [Constraints](#constraints)
 * [Challenges](#challenges)
+* [Next Steps that could be taken](#next-steps-that-could-be-taken)
+
+## Prerequisites
+1. **IntelliJ**: IntelliJ Community Edition can be downloaded from : [IntelliJ Download Link](https://www.jetbrains.com/idea/download/#section=windows). Using, IntelliJ will help in easy installation of scala and other dependencies.
+2. **Chromedriver**: Selenium Webdriver is going to need the chromedriver to launch Google Chrome browser while running selenium test.
+   It can be downloaded from : [Chromedriver download link](https://chromedriver.chromium.org/downloads). Depending on the operating system being
+   used, one can choose which .exe file should be downloaded.
+
+## Dependencies used in build.sbt
+```
+libraryDependencies += "org.scalatest"  %% "scalatest" % "3.2.0" % "test"
+libraryDependencies += "org.scalatestplus"  %% "selenium-3-141" % "3.2.0.0" % "test"
+libraryDependencies += "org.seleniumhq.selenium" % "selenium-java" % "3.14.0" % "test"
+```
+
+## Clone and Run Project:
+1. Clone the repository using the git command:
+```
+git clone https://github.com/paramipersonal/selenium-test-facebook.git
+```
+3. Put the downloaded chromedriver.exe inside the project directory, in this case FacebookLoginLout
+4. Open the project in IntelliJ , Using open Project from existing sources.
+5. If there is no existing Scala SDK, IntelliJ will pop up download instuctions. Please download scala 2.13.8
+6. Let IntelliJ resolve the other required dependencies
+7. Create a directory "screenshots" under project root . This will ensure that the screenshots are saved in that directory, whenever the test fails.
+8. IntelliJ will give option to start to project build, click on that.
+9. Click on TestSuite.scala and click run to run the test classes.
+
 
 ## Project Structure and Descriptions
 This is a simple project that uses Selenium WebDriver and scalatest
@@ -56,36 +83,6 @@ take screenshot (this is different from the withScreenshot method, which takes s
 | PostSpec.scala        | Contains test to verify that status is created and posted properly                                                                       |        
 
 
-## Prerequisites
-1. **IntelliJ**: IntelliJ Community Edition can be downloaded from : [IntelliJ Download Link](https://www.jetbrains.com/idea/download/#section=windows). Using, IntelliJ will help in easy installation of scala and other dependencies.
-2. **Chromedriver**: Selenium Webdriver is going to need the chromedriver to launch Google Chrome browser while running selenium test.
-   It can be downloaded from : [Chromedriver download link](https://chromedriver.chromium.org/downloads). Depending on the operating system being
-   used, one can choose which .exe file should be downloaded.
-
-## Dependencies used in build.sbt
-```
-libraryDependencies += "org.scalatest"  %% "scalatest" % "3.2.0" % "test"
-libraryDependencies += "org.scalatestplus"  %% "selenium-3-141" % "3.2.0.0" % "test"
-libraryDependencies += "org.seleniumhq.selenium" % "selenium-java" % "3.14.0" % "test"
-```
-
-## Clone and Run Project:
-1. Clone the repository using the git command:
-```
-git clone https://github.com/paramipersonal/selenium-test-facebook.git
-```
-3. Put the downloaded chromedriver.exe inside the project directory, in this case FacebookLoginLout
-4. Open the project in IntelliJ , Using open Project from existing sources.
-5. If there is no existing Scala SDK, IntelliJ will pop up download instuctions. Please download scala 2.13.8
-6. Let IntelliJ resolve the other required dependencies
-7. Create a directory "screenshots" under project root . This will ensure that the screenshots are saved in that directory, whenever the test fails.
-8. IntelliJ will give option to start to project build, click on that.
-9. Go to the terminal and inside the project directory, use ```sbt test``` to run the tests.
-
-## Next Steps that could be taken: 
-* More basic but similar functionalities could be tested . Some examples are : add a story, add About, add Photos.
-* Facebook does not allow posting two identical posts within a short interval of time. This could be tested.
-
 ## Constraints: 
 
 It has been observed that various facebook profile had various navigation patterns involved.
@@ -130,3 +127,7 @@ careful about getting blocked.
 Since most of the css selectors were created dynamically, finding locators and selecting the proper 
 DOM locators in a way that the code can be re-used , was the primary challenge. 
 
+
+## Next Steps that could be taken:
+* More basic but similar functionalities could be tested . Some examples are : add a story, add About, add Photos.
+* Facebook does not allow posting two identical posts within a short interval of time. This could be tested.
