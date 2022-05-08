@@ -44,10 +44,11 @@ git clone https://github.com/paramipersonal/selenium-test-facebook.git
 
 Below is the list of selenium test present in this project
 
-| Class Name | Test                                                               |
-|------------|--------------------------------------------------------------------|
-| LogoutSpec | Contains test to verify that log out is performed properly         |
-| PostSpec   | Contains test to verify that status is created and posted properly |        
+| Class Name       | Test                                                                                                                      |
+|------------------|---------------------------------------------------------------------------------------------------------------------------|
+| BaseSpec.scala   | Ensrures all the necessary initializations, launches and logs in the facebook.Ensures webdriver close after end of tests. |        
+| LogoutSpec.scala | Contains test to verify that log out is performed properly                                                                |
+| PostSpec.scala   | Contains test to verify that status is created and posted properly                                                        |        
 
 
 
