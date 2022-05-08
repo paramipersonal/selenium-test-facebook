@@ -39,6 +39,14 @@ git clone https://github.com/paramipersonal/selenium-test-facebook.git
 8. IntelliJ will give option to start to project build, click on that.
 9. Go to the terminal and inside the project directory, use ```sbt test``` to run the tests.
 
+## List of Tests done
+
+Below is the list of selenium test present in this project
+
+| Class Name | Test                                                               |
+|------------|--------------------------------------------------------------------|
+| LogoutSpec | Contains test to verify that log out is performed properly         |
+| PostSpec   | Contains test to verify that status is created and posted properly |        
 
 
 
