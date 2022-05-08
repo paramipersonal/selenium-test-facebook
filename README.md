@@ -90,10 +90,10 @@ I observed a couple of facebook profiles, in the same machine, same browser and 
 Please find the types below :
 
 **Type1** :
-![Image1](/images/UI_test1.png)
+![Image1](https://github.com/paramipersonal/selenium-test-facebook/blob/dev/parami-branch-7/images/UI_test1.PNG)
 
 **Type2** : 
-![Image2](/images/UI_test2.png)
+![Image2](https://github.com/paramipersonal/selenium-test-facebook/blob/dev/parami-branch-7/images/UI_test2.PNG)
 
 
 Here I have used type1 of UI for navigation steps inside selenium.
