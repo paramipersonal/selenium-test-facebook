@@ -1,7 +1,5 @@
 package selenium
 
-import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.ExpectedConditions
 import utilities.common._
 
 class LoginLogoutSpec extends BaseSpec {
