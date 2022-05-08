@@ -99,8 +99,8 @@ Please find the types below :
 ![Image2](https://github.com/paramipersonal/selenium-test-facebook/blob/dev/parami-branch-7/images/UI_test2.PNG)
 
 
-Here I have used type1 of UI for navigation steps inside selenium.
-If anyone has the type 2, one can modifying the following methods before running the tests: 
+Here I have used **Type1** of UI for navigation steps inside selenium.
+If anyone has the **Type2**, one can modify the following methods before running the tests: 
 ```
 def goToTimeline(): Unit = {
     explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[1]/div/div[1]/div[1]/div/div[1]/span/div/div[2]"))).click()
