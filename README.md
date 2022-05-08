@@ -1,6 +1,5 @@
 # Selenium Test Facebook
 
-This README contains the below sections:
 * [Project Structure and Descriptions](#project-structure-and-descriptions)
 * [Prerequisites](#prerequisites)
 * [Dependencies used in build.sbt](#dependencies-used-in-buildsbt)
