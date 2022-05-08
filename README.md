@@ -92,7 +92,10 @@ Please find the types below :
 **Type1** :
 ![Image1](https://github.com/paramipersonal/selenium-test-facebook/blob/dev/parami-branch-7/images/UI_test1.PNG)
 
+
+
 **Type2** : 
+
 ![Image2](https://github.com/paramipersonal/selenium-test-facebook/blob/dev/parami-branch-7/images/UI_test2.PNG)
 
 
