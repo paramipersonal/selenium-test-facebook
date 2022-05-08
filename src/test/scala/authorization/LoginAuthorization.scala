@@ -5,6 +5,7 @@ trait LoginAuthorization {
   private var EMAIL_ID = "kolkatacovid19resources@gmail.com"
   private var PASSWORD = "Tom@4242"
 
+
   def getEmailId(): String = {
     EMAIL_ID
   }

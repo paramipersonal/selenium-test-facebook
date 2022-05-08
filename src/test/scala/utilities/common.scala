@@ -1,9 +1,8 @@
 package utilities
 
 import org.openqa.selenium.chrome.ChromeOptions
-import org.openqa.selenium.{By, WebDriver}
+import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
-import org.openqa.selenium.JavascriptExecutor
 
 
 object common {
@@ -57,14 +56,20 @@ object common {
 
   def logOutOfFacebook(): Unit = {
     clickAccountDropdown()
+    //This line is temporary
+    //explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[1]/div/div[1]/div[1]/div/div[1]/span/div/div[2]"))).click()
     explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(s"//span[.='See your profile']")))
     val logout = explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath(s"//span[.='Log Out']")))
     logout.click()
     explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.id("email")))
   }
 
-  def clickFacebookHome(): Unit = {
+  def locateFacebookHome(): WebElement = {
     val home = explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(s"//a[contains(@aria-label,'Home')]")))
+    home
+  }
+  def clickFacebookHome(): Unit = {
+    val home = locateFacebookHome()
     home.click()
     explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(s"//div[contains(@aria-label,'Create a post')]")))
   }
@@ -74,7 +79,9 @@ object common {
   }
 
   def goToTimeline(): Unit = {
-    clickAccountDropdown()
+     clickAccountDropdown()
+    //This line is temporary
+    //explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[1]/div/div[1]/div[1]/div/div[1]/span/div/div[2]"))).click()
     explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href='/me/']"))).click()
     explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[.='Photos']")))
   }
@@ -82,6 +89,10 @@ object common {
   def scrollDown(pixel: String): Unit = {
     val js = driver.asInstanceOf[JavascriptExecutor]
     js.executeScript(pixel, "")
+  }
+
+  def findPasswordIncorrectError(): Unit = {
+    explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href*='facebook_login_pw_error']")))
   }
 
 }
