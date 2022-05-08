@@ -1,5 +1,10 @@
 # Selenium Test Facebook
 
+This README contains the below sections: 
+* [Prerequisites](#prerequisites)
+* [Dependencies used in build.sbt](#dependencies-used-in-buildsbt)
+
+
 This is a simple project that uses Selenium WebDriver and scalatest
 to perform the below actions:
 1. Launch Facebook
