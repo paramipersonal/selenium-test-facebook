@@ -47,7 +47,7 @@ to perform the below actions:
 7. Also, takes screenshots, as per developer's needs.
 
 ### Files
-There are three directories & a file under the source (src) directory:
+There are three directories & a file under the [scala directory](https://github.com/paramipersonal/selenium-test-facebook/tree/master/src/test/scala) which is nested under test directory , which is nested under src directory:
 * [File: TestSuite.scala](#testsuitescala-)
 * [Directory: authorization](#file-inside-authorization-directory)
 * [Directory: utilities](#files-inside-utilities-directory)
